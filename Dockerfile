@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     default-mysql-client \
     default-libmysqlclient-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg\
-    && docker-php-ext-install pdo_pgsql pdo_mysql mbstring exif pnctl bcmath gd zip sodium
+    && docker-php-ext-install pdo_pgsql pdo_mysql mbstring exif pcntl bcmath gd zip sodium
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
